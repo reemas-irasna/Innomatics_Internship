@@ -1,0 +1,12 @@
+class Solution:
+    def maxProduct(self, nums: List[int]) -> int:
+        self.nums = nums
+        l = len(self.nums)
+        num = sorted(self.nums, reverse = True)
+        first_max = num[0]
+        second_max = num[1]
+        return ((first_max-1) * (second_max-1))
+
+x=Solution()
+x.maxProduct([3,4,5,2])            
+            

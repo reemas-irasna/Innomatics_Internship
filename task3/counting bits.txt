@@ -1,0 +1,28 @@
+class Solution():
+    def countBits(self, n):
+
+      def binary_sum(num):
+        if num == 0 :
+          return 0
+        if num == 1 :
+          return 1
+        if num == 2 :
+          return 1
+
+        for i in range (1, int(num)):
+          if 2 ** i > num:
+            bin_num = [0]*i
+            break
+        for i in range (len(bin_num)):
+          if num >= 2**((len(bin_num) - i) - 1):
+            bin_num[i] = 1
+            num = num - 2**(len(bin_num) - i - 1)
+        return sum(bin_num)
+
+      res = []
+      for i in range (n+1):
+        res.append(binary_sum(i))
+      return res
+
+x=Solution()
+x.countBits(5)

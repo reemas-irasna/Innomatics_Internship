@@ -1,0 +1,11 @@
+class Solution:
+    def busyStudent(self, startTime, endTime, queryTime):
+        start_end = zip(startTime, endTime)
+        count = 0
+        for i, j in start_end:
+            if i <= queryTime <= j:
+                count += 1
+        return count
+                
+x= Solution()
+x.busyStudent([1,2,3], [3,2,7], 4)
